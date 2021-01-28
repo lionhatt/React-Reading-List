@@ -17,7 +17,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 const connection = "mongodb+srv://admin:elaine0803@cluster0.x5iuk.mongodb.net/reactreadinglist?retryWrites=true&w=majority"
-mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false || "mongodb://localhost/reactreadinglist");
+mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false} || "mongodb://localhost/reactreadinglist");
 
 // Start the API server
 app.listen(PORT, function() {

@@ -8,5 +8,8 @@ React Router to the Books application in order to render a book details page as 
 
 * Start the app by running `npm start` from the project root.
 
+## Demostration
+![React-Reading-List demo](assets/img/React-Reading-List.gif)
+
 ## Link:
 [Application Page](https://lionhatt-react-reading-list.herokuapp.com/)

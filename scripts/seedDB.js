@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-const uri = "mongodb+srv://admin:elaine0803@cluster0.x5iuk.mongodb.net/booksdb?retryWrites=true&w=majority"
+const uri = "mongodb://admin:elaine0803@cluster0-shard-00-00.x5iuk.mongodb.net:27017,cluster0-shard-00-01.x5iuk.mongodb.net:27017,cluster0-shard-00-02.x5iuk.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-wlwilh-shard-0&authSource=admin&retryWrites=true&w=majority"
 
 // This file empties the Books collection and inserts the books below
 
-mongoose.connect(uri,{ useNewUrlParser: true });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const bookSeed = [
   {

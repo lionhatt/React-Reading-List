@@ -5,7 +5,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const uri = "mongodb+srv://admin:elaine0803@cluster0.x5iuk.mongodb.net/booksdb?retryWrites=true&w=majority"
+const uri = "mongodb+srv://admin:elaine0803@cluster0.x5iuk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 
 // Define middleware here
@@ -19,7 +19,11 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI|| "mongodb://localhost/reactreadinglist");
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connection.on('connected', () => {
+  console.log('mongoose is connected!')
+})
 
 // Start the API server
 app.listen(PORT, function() {
